@@ -5,7 +5,6 @@ function loadData (){
 }
 
 
-
 function loadUsers(){
     fetch('https://jsonplaceholder.typicode.com/users')
     .then(response=>response.json())
@@ -19,6 +18,7 @@ function loadPosts (){
 }
 
 
+// this function was called from loadUsers function()
 
 function displayUsers(data){
     const ul = document.getElementById('users')
