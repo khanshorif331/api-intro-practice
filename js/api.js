@@ -30,3 +30,24 @@ function displayUsers(data){
 }
 
 
+
+function imageLoad (){
+    fetch('https://jsonplaceholder.typicode.com/photos')
+    .then(res=>res.json())
+    .then(data=>displayImages(data))
+}
+imageLoad()
+
+
+function displayImages(images){
+    const imageContainer = document.getElementById('images-container')
+    for(const image of images){
+        // console.log(image.title)
+        const div = document.createElement('div')
+        div.innerHTML = `
+        <h2>${image.title}</h2>
+        <div><img src="${image.url}"></div>
+        `
+        imageContainer.appendChild(div)
+    }
+}
